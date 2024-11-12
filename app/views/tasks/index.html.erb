@@ -1,0 +1,16 @@
+<div class="container">
+<h1>My tasks</h1>
+<ul class="list-unstyled">
+  <% @tasks.each do |task| %>
+    <% if task.completed %>
+    <li>
+      <%= "✔️" %>
+    <% else %>
+      <%= "❌" %>
+    <% end %>
+    <%= link_to task.title, task_path(task) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Add a new task!", tasks_new_path %>
+</div>

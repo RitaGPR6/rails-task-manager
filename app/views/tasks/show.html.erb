@@ -1,0 +1,17 @@
+<div class="container">
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+<% if @task.completed %>
+  <%= "This task is completed" %>
+<% else %>
+  <%= "This task is not completed yet!"%>
+<% end %>
+<p></p>
+<p><%= link_to "Back to the list", tasks_path %></p>
+<p><%= link_to "Edit task", edit_path %></p>
+
+<h1><%= link_to "🗑️",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></h1>
+</div>
